@@ -1,4 +1,4 @@
-# Aspectos basicos del desarrolo web (2).
+# Aspectos basicos del desarrolo web (1).
 ![Imagen](../Capturas/1.png)
 
 El desarrollo web es el proceso de construir, crear y mantener sitios web. Este proceso se divide en varias etapas, cada una de las cuales es fundamental para garantizar que un sitio web sea funcional, atractivo y accesible para los usuarios. A continuación, se explican algunos de los aspectos básicos clave del desarrollo web:
