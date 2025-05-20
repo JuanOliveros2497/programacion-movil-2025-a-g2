@@ -1,0 +1,12 @@
+ion-app,
+ion-content {
+  --background: #e2c3c3;
+  background-color: #e2c3c3;
+}
+.calendario-blanco {
+  --background: white;
+  --ion-background-color: white;
+  --ion-text-color: black;
+  color-scheme: light;
+  border-radius: 8px;
+}

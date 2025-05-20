@@ -1,0 +1,57 @@
+.boton-inicio {
+  --background: black;
+  display: inline-block; /* Cambié a inline-block para que no ocupe todo el ancho */
+  position: center;
+  top: -70px; /* sube 10px */
+  padding: 15px 40px;
+  font-size: 16px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+  width: auto; /* Auto con inline-block hace que el ancho se ajuste al contenido */
+  max-width: 400px; /* Puedes ajustar este valor a lo que quieras */
+}
+.contenedor-boton {
+  text-align: center;
+  top: -70px; /* sube 10px */
+}
+.inicio-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
+  height: 90vh; /* ocupa toda la altura de la pantalla */
+  text-align: center;
+  margin-top: 40px;
+}
+
+.imagen-personalizada {
+  width: 300px; /* o el tamaño que desees */
+  margin-bottom: 20px;
+}
+
+.boton-formulario {
+  margin-top: 10px;
+}
+
+.titulo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.parrafo {
+  font-size: 12px;
+  color: #555;
+  max-width: 300px; /* limita el ancho máximo */
+  margin: 0 auto; /* centra horizontalmente el recuadro */
+  text-align: center; /* centra el texto dentro del recuadro */
+  padding: 8px; /* un poco de espacio interno */
+  position: relative;
+  top: -70px; /* sube 10px */
+  border-radius: 6px; /* opcional, bordes redondeados */
+}

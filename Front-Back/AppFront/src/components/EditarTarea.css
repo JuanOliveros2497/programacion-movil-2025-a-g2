@@ -1,0 +1,28 @@
+.fondo-blanco {
+  --background: #b9a1a1;
+  background-color: #b9a1a1;
+}
+
+.botones-formulario {
+  display: flex;
+  justify-content: space-between; /* Distribuye los botones */
+  gap: 10px; /* Espaciado entre los botones */
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Estilos para los botones */
+.boton-formulario {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Tamaño normal */
+  font-size: 16px; /* Tamaño de la fuente */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar */
+  transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+/* Efecto al pasar el mouse */
+.boton-formulario:hover {
+  background-color: #333; /* Negro más claro al pasar el mouse */
+}
