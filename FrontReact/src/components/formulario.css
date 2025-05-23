@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+label {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700; /* Bold */
+  color: black;
+}
+.label-negrita {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+label {
+  color: black !important; /* Forzar el color negro */
+}
+
+.error {
+  --border-color: red;
+  border: 1px solid red;
+  border-radius: 8px;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85em;
+  margin: 4px 16px;
+}
+
+.campo-formulario {
+  margin-top: 10px; /* aumenta o ajusta según lo que necesites */
+}
+
+.formulario-container {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: 0 auto;
+  color: rgb(0, 0, 0);
+}
+
+.titulo-formularios {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  display: block;
+  width: 50%; /* La línea será la mitad del ancho del contenedor */
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  text-align: center; /* Centra el texto y la línea */
+  margin: 25px auto 20px auto;
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+.campo-custom {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+/* En tu archivo CSS (formulario.css) */
+.campo-custom input[type="time"] {
+  color: black !important;
+  background-color: white !important;
+  -webkit-text-fill-color: black !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  font-size: 16px !important;
+  /* Añade estos estilos para el icono */
+  appearance: auto !important;
+  -webkit-appearance: menulist-button !important;
+}
+/* Añade esto a tu formulario.css */
+.time-input-native {
+  --background: white !important;
+  --color: black !important;
+  --padding-end: 16px !important;
+}
+
+.time-input-native::part(input) {
+  appearance: auto !important;
+  -webkit-appearance: menulist-button !important;
+  padding-inline-end: 24px !important;
+}
+
+/* Para el icono en Chrome/Safari */
+.time-input-native::-webkit-calendar-picker-indicator {
+  display: block !important;
+  opacity: 1 !important;
+}
+/* Para navegadores WebKit (Chrome, Safari) */
+.campo-custom input[type="time"]::-webkit-calendar-picker-indicator {
+  display: block !important;
+  background: none;
+  color: black;
+  opacity: 1;
+}
+.campo-custom input,
+.campo-custom textarea {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+.campo-custom input::placeholder,
+.campo-custom textarea::placeholder {
+  color: #888;
+}
+
+.formulario-container {
+  background-color: #e0bcbc;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: 0 auto;
+  color: rgb(0, 0, 0);
+}
+
+.campo-custom {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.campo-custom input[type="time"] {
+  color: black !important;         /* Texto negro */
+  background-color: white !important; /* Fondo blanco */
+  -webkit-text-fill-color: black !important; /* Para WebKit (iOS, Chrome) */
+  border: 1px solid #ccc !important;  /* borde para que se note */
+  border-radius: 8px !important;
+  padding: 10px !important;
+  font-size: 16px !important;
+}
+
+.campo-custom textarea {
+  background-color: #f9f9f9; /* Blanco casi puro */
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+.campo-custom input::placeholder,
+.campo-custom textarea::placeholder {
+  color: #888;
+}
+
+.fondo-blanco {
+  --background: #b9a1a1;
+  background-color: #b9a1a1;
+  color: black; /* Asegura que el texto sea negro */
+}
+.botones-formulario {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  align-items: flex-start; /* ← evita estiramiento vertical */
+  gap: 16px; /* Espacio entre los botones */
+  margin-top: 20px;
+}
+
+.boton-formulario {
+  --background: black;
+  --color: rgb(201, 70, 70);
+  --border-radius: 8px;
+  --box-shadow: none;
+  padding: 4px 16px; /* más delgado */
+  font-size: 14px; /* tamaño razonable del texto */
+  border: none;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 12px;
+  width: auto !important;
+  max-width: 150px; /* límite opcional */
+  height: auto !important; /* ← asegura que la altura no esté forzada */
+
+  flex-grow: 0; /* ← evita que se estiren dentro de un contenedor flex */
+  flex-shrink: 0;
+  flex-basis: auto;
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
+
+/* Estilo general del alert */
+.custom-alert .alert-wrapper {
+  border-radius: 16px;
+  background-color: #fff;
+  color: #000;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensaje del alert */
+.custom-alert .alert-message {
+  font-size: 16px;
+  padding-top: 8px;
+  color: #333;
+}
+
+/* Botón OK personalizado */
+.custom-ok-button {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  padding: 8px 16px !important;
+  font-weight: bold;
+  margin: 0 auto !important; /* Esto lo centra horizontalmente */
+  display: block !important; /* Necesario junto a margin auto */
+  text-align: center;
+}
+.calendario-claro {
+  --background: white;
+  --ion-background-color: white;
+  --ion-text-color: black;
+  color-scheme: light;
+  --background: #ffffff;
+  --ion-text-color: #000000;
+  color: #000000;
+}
+/* SOBRESCRIBE LOS ESTILOS DE IONIC PARA EL BOTÓN OUTLINE */
+.boton-secundario {
+  --border-color: #c89191 !important; /* Borde rosado como tu diseño */
+  --color: white !important; /* Texto negro */
+  --background-hover: rgba(200, 145, 145, 0.1) !important; /* Hover rosado suave */
+}
+
+/* OPCIONAL: Si el borde sigue azul en algún estado */
+.boton-secundario.ion-activated, 
+.boton-secundario.ion-focused {
+  --border-color: #c89191 !important;
+}

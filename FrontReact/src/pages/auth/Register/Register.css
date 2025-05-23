@@ -1,0 +1,126 @@
+/* Register.css - Estilo con paleta rosado-terroso */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5e8e8; /* Fondo claro que complementa #c89191 */
+  padding: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(200, 145, 145, 0.15); /* Sombra sutil en tono coordinado */
+  border: 1px solid #e0c4c4; /* Borde delicado */
+}
+
+/* Título */
+h1 {
+  color: #7a5a5a; /* Ton tierra oscuro para contraste */
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #c89191; /* Línea decorativa en el tono principal */
+}
+
+/* Campos de entrada */
+.input-field {
+  background: #f9f1f1; /* Fondo muy claro rosado */
+  border-radius: 10px;
+  margin-bottom: 18px;
+  --padding-start: 14px;
+  --highlight-color-focused: #a57878; /* Ton más oscuro al enfocar */
+  color: #5a4444; /* Texto oscuro cálido */
+  border: 1px solid #e0c4c4;
+}
+
+.input-field input::placeholder {
+  color: #b29898; /* Placeholder suave */
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #c74a4a; /* Rojo terroso */
+  font-size: 13px;
+  margin: -14px 0 14px 14px;
+  font-weight: 500;
+}
+
+/* Botón principal */
+ion-button {
+  --border-radius: 10px;
+  --background: #c89191; /* Color principal */
+  --color: white;
+  --box-shadow: 0 2px 6px rgba(200, 145, 145, 0.3);
+  font-weight: 600;
+  height: 50px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+ion-button:hover {
+  --background: #b58282; /* Ton más oscuro al hover */
+}
+
+ion-button:disabled {
+  --background: #e0c4c4; /* Versión clara deshabilitada */
+}
+
+/* Botón de enlace */
+.link-button {
+  --color: #a57878; /* Ton tierra medio */
+  --background: transparent;
+  font-size: 14px;
+  margin-top: 20px;
+  text-underline-offset: 3px;
+}
+
+.link-button:hover {
+  --color: #7a5a5a; /* Oscurece al hover */
+}
+
+/* Spinner */
+ion-spinner {
+  color: #a57878;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+/* Alerta */
+ion-alert {
+  --backdrop-opacity: 0.6;
+}
+
+ion-alert .alert-wrapper {
+  border-radius: 12px;
+  border: 1px solid #e0c4c4;
+}
+
+ion-alert .alert-head {
+  color: #7a5a5a;
+}
+
+ion-alert .alert-message {
+  color: #5a4444;
+}
+
+ion-alert .alert-button {
+  color: #c89191 !important;
+}

@@ -1,0 +1,48 @@
+.contenido-modal-eliminar {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  color: black;
+  min-width: 280px;
+  max-width: 350px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.botones-modal {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.botones-modal ion-button {
+  flex: 1; /* Hace que cada botón ocupe el mismo ancho disponible */
+  width: 120px; /* Puedes ajustar este mínimo para que no queden muy pequeños */
+}
+
+.modal-centro {
+  height: 100vh !important;
+  width: 100vw !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.modal-centro::part(content) {
+  height: 100vh !important;
+  width: 100vw !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.modal-centro .ion-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
