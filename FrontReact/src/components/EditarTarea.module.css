@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+/* Variables de color */
+:root {
+  --color-fondo: #b9a1a1; /* Fondo rosado */
+  --color-contenedor: #e0bcbc; /* Contenedor rosado claro */
+  --color-texto: #000000; /* Texto negro */
+  --color-borde: #c8a1a1; /* Borde rosado oscuro */
+  --color-boton: #000000; /* Botón negro */
+  --color-texto-boton: white; /* Texto botón rojo */
+  --color-error: #d32f2f; /* Rojo para errores */
+}
+
+/* Estructura principal */
+.fondo {
+  --background: var(--color-fondo);
+  background-color: var(--color-fondo);
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: var(--color-contenedor);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: 0 auto;
+  color: var(--color-texto);
+}
+
+/* Tipografía */
+.titulo {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin: 25px auto 20px;
+  color: var(--color-texto);
+  width: 50%;
+  border-bottom: 2px solid var(--color-texto);
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+/* Campos de formulario */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+.input {
+  background-color: #f9f9f9;
+  border: 1px solid var(--color-borde);
+  border-radius: 20px;
+  padding: 15px;
+  color: var(--color-texto);
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+  background-color: #f9f9f9;
+  border: 1px solid var(--color-borde);
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #888;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Input de tiempo específico */
+.input[type="time"] {
+  color: var(--color-texto) !important;
+  background-color: white !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+}
+
+/* Checkboxes */
+.checkboxContainer {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.checkboxLabel {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: var(--color-texto);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-texto);
+}
+
+/* Botones */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.boton {
+  background-color: #c89191;
+  color: var(--color-texto-boton);
+  border-radius: 12px;
+  padding: 2px 15px;
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  max-width: 120px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* Alertas */
+.alertaError .alert-wrapper {
+  border-radius: 16px;
+  background-color: white;
+  color: var(--color-texto);
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.alertaError .alert-message {
+  font-size: 16px;
+  color: var(--color-error);
+  padding-top: 8px;
+}
+
+.alertaExito .alert-wrapper {
+  border-radius: 16px;
+  background-color: white;
+  color: var(--color-texto);
+  font-family: "Nunito", sans-serif;
+}
+
+.alertButtonConfirm {
+  background-color: white;
+  color: var(--color-texto-boton) !important;
+  border-radius: 10px !important;
+  font-weight: bold !important;
+}
+
+/* IonDatetime */
+.datetimeItem {
+  --background: transparent;
+  margin: 10px 0;
+}
+
+.datetime {
+  --background: white;
+  --ion-background-color: white;
+  --ion-text-color: black;
+  color-scheme: light;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+}
+
+/* Contador de caracteres */
+.contador {
+  font-size: 0.85em;
+  color: #666;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Errores */
+.error {
+  border: 1px solid var(--color-error) !important;
+}
+
+.error-text {
+  color: var(--color-error);
+  font-size: 0.85em;
+  margin: 4px 16px;
+}
+
+/* Añade esto específicamente para el input de hora */
+.input[type="time"] {
+  width: 100% !important; /* Ocupa todo el ancho disponible */
+  min-width: 100% !important;
+  padding: 15px !important; /* Igual que los demás inputs */
+  height: 52px !important; /* Altura consistente con otros campos */
+  appearance: none !important; /* Resetear estilos nativos */
+  -webkit-appearance: none !important;
+  background-color: #f9f9f9 !important;
+  border: 1px solid var(--color-borde) !important;
+  border-radius: 20px !important; /* Mismo radio que otros campos */
+  font-family: "Nunito", sans-serif !important;
+  color: var(--color-texto) !important;
+}
+
+/* Icono de reloj personalizado (opcional) */
+.input[type="time"]::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  opacity: 1 !important;
+  padding: 0 8px;
+}
+.campo {
+  width: 100%;
+  position: relative; /* Para posicionar elementos hijos si es necesario */
+}

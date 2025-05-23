@@ -1,0 +1,61 @@
+.inicio-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 70px;
+  box-sizing: border-box;
+}
+
+.imagen-personalizada {
+  width: 300px; /* Imagen más pequeña */
+  margin-bottom: 10spx;
+}
+
+.parrafo {
+  font-size: 14px;
+  color: #555;
+  max-width: 280px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+/* Contenedor del botón (mantenemos esto igual) */
+.contenedor-boton {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+/* Nuevo estilo para el botón - Bordes semi-cuadrados */
+.contenedor-boton > ion-button.boton-inicio {
+  --background: #000000 !important;
+  --color: white !important;
+  --border-radius: 12px !important; /* Reducimos de 20px a 8px para menos redondez */
+  --box-shadow: none !important;
+  --padding-top: 14px !important;
+  --padding-bottom: 14px !important;
+  
+  width: 70%;
+  font-weight: 500 !important;
+  margin: 0 auto;
+  height: auto !important;
+  transition: all 0.3s ease !important; /* Cambiamos a 'all' para animar transform también */
+}
+
+/* Efectos interactivos mejorados */
+.contenedor-boton > ion-button.boton-inicio:hover {
+  --background: #333333 !important;
+  transform: translateY(-2px) !important; /* Efecto de levitación sutil */
+}
+
+.contenedor-boton > ion-button.boton-inicio:active {
+  --background: #b58282 !important;
+  transform: scale(0.98) translateY(0) !important; /* Combinamos escalado y posición */
+}
