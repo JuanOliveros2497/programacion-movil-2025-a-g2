@@ -2,7 +2,7 @@
 ---
 [Enlace Tablero Trello](https://trello.com/b/yvJWwqhG/todo-appprogramacionmovil)
 ---
-[Enlace Repositorio Git]([https://trello.com/b/yvJWwqhG/todo-appprogramacionmovil](https://github.com/JuanOliveros2497/programacion-movil-2025-a-g2/tree/feature/project)
+[Enlace Repositorio Git](https://github.com/JuanOliveros2497/programacion-movil-2025-a-g2/tree/feature/project )
 ---
 [Enlace Video Explicativo APK](https://drive.google.com/drive/folders/18CR0CWf16LXGMlYEFxZNwTa48Lg5CxEa?usp=sharing)
 ---
