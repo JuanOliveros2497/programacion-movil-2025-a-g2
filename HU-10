@@ -1,0 +1,27 @@
+# HU-10 - Agregar Nota adicional
+
+**Estado:** COMPLETED  
+**Prioridad:** Media  
+**Estimación:** 5 (fácil)  
+
+## Descripción
+Como usuario, quiero un campo para agregar una nota a la tarea, y poder añadir detalles importantes.
+
+## Criterios de Aceptación
+- El usuario puede agregar una nota al crear o editar una tarea.
+- El campo puede quedar vacío sin errores.
+- El usuario puede editar la nota luego.
+
+## Definición de Listo
+- Diseño del campo disponible.
+- Campo funcional.
+
+## Definición de Hecho
+- Se ha verificado que el campo se guarda y recupera correctamente desde la base de datos.
+
+### Capturas de Funcionamiento
+**Captura Vista nota Creacion**
+![Captura de pantalla de la app](Capturas/NotaAgregar.png)
+
+**Captura Vista nota Edicion**
+![Captura de pantalla de la app](Capturas/NotaEditar.png)
