@@ -1,4 +1,4 @@
-package com.corhuila.backend.controllers;
+package com.corhuila.backend.controller;
 
 import com.corhuila.backend.models.entity.Tarea;
 import com.corhuila.backend.models.service.ITareaService;
@@ -43,9 +43,21 @@ public class TareaController {
 
     @PostMapping
     public Tarea create(@RequestBody Tarea tarea) {
+        System.out.println("====== DATOS DE TAREA RECIBIDOS ======");
+        System.out.println("Nombre: " + tarea.getNombre());
+        System.out.println("Descripción: " + tarea.getDescripcion());
+        System.out.println("Nota: " + tarea.getNota());
+
+        // Verificar si el usuario viene en la petición
+        if (tarea.getUsuario() != null) {
+            System.out.println("Usuario ID: " + tarea.getUsuario().getId());
+            System.out.println("Usuario Nombre: " + tarea.getUsuario().getNombreCompleto()); // Asegúrate de que tu entidad Usuario tenga getNombre()
+        } else {
+            System.out.println("⚠️ Usuario es NULL");
+        }
+
         return tareaService.save(tarea);
     }
-
     @PutMapping("/{id}")
     public Tarea update(@PathVariable Long id, @RequestBody Tarea tarea) {
         Optional<Tarea> tareaExistente = tareaService.findById(id);

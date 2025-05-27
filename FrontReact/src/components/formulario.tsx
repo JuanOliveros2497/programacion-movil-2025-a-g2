@@ -18,6 +18,8 @@ const TaskForm: React.FC = () => {
   const [descripcion, setDescripcion] = useState("");
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
+  const [nota, setNota] = useState("");
+  const today = new Date().toISOString().split('T')[0]; // Formato YYYY-MM-DD
   const [showAlert, setShowAlert] = useState(false);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showLengthAlert, setShowLengthAlert] = useState(false);
@@ -36,6 +38,28 @@ const TaskForm: React.FC = () => {
     setNombre(valor);
     setError("");
   };
+const handleHoraChange = (e: CustomEvent) => {
+  const selectedHora = e.detail.value as string;
+  
+  // Solo validar si la fecha seleccionada es hoy
+  if (fecha === new Date().toISOString().split('T')[0]) {
+    const now = new Date();
+    
+    // Crear objetos Date para comparación
+    const [selectedHours, selectedMinutes] = selectedHora.split(':').map(Number);
+    const selectedTime = new Date();
+    selectedTime.setHours(selectedHours, selectedMinutes, 0, 0);
+    
+    if (selectedTime < now) {
+      setError("No puedes seleccionar una hora que ya pasó");
+      setHora(""); // Limpiar el campo
+      return;
+    }
+  }
+  
+  setHora(selectedHora);
+  setError("");
+};
 
   const handleDescripcionChange = (e: CustomEvent) => {
     const valor = e.detail.value || '';
@@ -65,12 +89,13 @@ const TaskForm: React.FC = () => {
       const tareaData = {
         nombre,
         descripcion,
-        fecha: fecha.split('T')[0], // Formato YYYY-MM-DD
+        fecha: fecha.split('T')[0],
         hora: hora || new Date(fecha).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         realizada: false,
         favorita: false,
-        usuario: { id: Number(userId) } // Estructura que espera tu backend Spring
-      };
+        nota: nota || null, // ✅ Campo añadido
+        usuario: { id: Number(userId) }
+      };  
 
       const response = await fetch(`${config.API_URL}/tareas`, {
         method: "POST",
@@ -91,6 +116,7 @@ const TaskForm: React.FC = () => {
       setDescripcion("");
       setFecha("");
       setHora("");
+      setNota("");
       
     } catch (err) {
       setError(err instanceof Error ? err.message : "Error desconocido");
@@ -121,22 +147,30 @@ const TaskForm: React.FC = () => {
             rows={4}
             maxlength={MAX_DESCRIPCION}
           />
-
-                    <IonItem className="ion-margin-vertical">
-            <IonDatetime
-              presentation="date"
-              value={fecha}
-              onIonChange={(e) => setFecha(e.detail.value as string)}
-              className="calendario-claro"
-            />
-          </IonItem>
-          <IonInput
-            placeholder="Hora"
-            type="time"
-            value={hora}
-            onIonChange={(e) => setHora(e.detail.value as string)}
+                    <IonTextarea
+            value={nota}
+            placeholder="Nota (opcional)"
+            onIonChange={(e) => setNota(e.detail.value || '')}
             className="campo-custom"
+            rows={2}
           />
+                    <IonItem className="ion-margin-vertical">
+          <IonDatetime
+          presentation="date"
+          value={fecha}
+          onIonChange={(e) => setFecha(e.detail.value as string)}
+          className="calendario-claro"
+          min={today} // ✅ Esto bloquea fechas anteriores
+          />
+          </IonItem>
+<IonInput
+  type="time"
+  value={hora}
+  onIonChange={handleHoraChange}
+  min={fecha === new Date().toISOString().split('T')[0] ? 
+       new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : undefined}
+  className="campo-custom"
+/>   
           {error && !showAlert && !showLengthAlert && (
             <div className="error-message">{error}</div>
           )}

@@ -39,4 +39,7 @@ public class Tarea {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
+
+    @Column(name = "nota", length = 255)
+    private String nota;
 }

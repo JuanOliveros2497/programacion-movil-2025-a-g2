@@ -14,7 +14,6 @@ interface Props {
 const BarraInferior: React.FC<Props> = ({ 
   abierto, 
   onCrearTarea, 
-  onVerRealizadas 
 }) => {
   const history = useHistory();
 
