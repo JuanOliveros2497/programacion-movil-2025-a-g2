@@ -18,6 +18,7 @@ interface Tarea {
   nombre: string;
   descripcion: string;
   fecha: string;
+  nota: string;
   hora: string;
   favorita: boolean;
   realizada: boolean;
@@ -37,8 +38,10 @@ const EditarTarea: React.FC = () => {
 
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
+  const [nota, setNota] = useState("");
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
+  const today = new Date().toISOString().split('T')[0]; // Formato YYYY-MM-DD
   const [favorita, setFavorita] = useState(false);
   const [realizada, setRealizada] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -60,6 +63,7 @@ const EditarTarea: React.FC = () => {
       setDescripcion(tarea.descripcion);
       setFecha(tarea.fecha);
       setHora(tarea.hora);
+      setNota(tarea.nota);
       setFavorita(tarea.favorita);
       setRealizada(tarea.realizada);
     }
@@ -81,6 +85,7 @@ const EditarTarea: React.FC = () => {
         hora,
         favorita,
         realizada,
+        nota,
         usuario: {
           id: tarea!.usuario.id
         }
@@ -156,11 +161,22 @@ const EditarTarea: React.FC = () => {
             ></textarea>
             <small className={styles.contador}>{descripcion.length}/{MAX_DESCRIPCION} caracteres</small>
           </div>
+          <div className={styles.campo}>
+            <textarea
+              value={nota}
+              onChange={(e) => setNota(e.target.value)}
+              placeholder="Nota (opcional)"
+              maxLength={MAX_DESCRIPCION}
+              className={`${styles.input} ${styles.textarea}`}
+            ></textarea>
+            <small className={styles.contador}>{descripcion.length}/{MAX_DESCRIPCION} caracteres</small>
+          </div>
 
           <IonItem className={styles.datetimeItem}>
             <IonDatetime
               presentation="date"
               value={fecha}
+              min={today}
               className={styles.datetime}
               onIonChange={(e) => {
                 const value = e.detail.value;
